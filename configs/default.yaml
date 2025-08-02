@@ -1,0 +1,30 @@
+# Model parameters
+embed_size: 512         # Size of word embeddings and image features
+hidden_size: 512        # Size of LSTM hidden state
+num_layers: 1           # Number of LSTM layers
+dropout: 0.5            # Dropout probability
+
+train_encoder: False    # Whether to fine-tune the CNN encoder
+
+# Training parameters
+batch_size: 32
+num_epochs: 20
+learning_rate: 0.001
+weight_decay: 0.0       # L2 regularization
+grad_clip: 5.0          # Clip gradients at this value
+
+# Data parameters
+train_image_dir: "data/raw/train2017"
+train_annotation_file: "data/annotations/captions_train2017.json"
+val_image_dir: "data/raw/val2017"
+val_annotation_file: "data/annotations/captions_val2017.json"
+
+# Checkpoint and logging
+model_dir: "models"
+resume: False           # Whether to resume training from a checkpoint
+checkpoint: ""          # Path to checkpoint to resume from
+save_every: 1           # Save checkpoint every N epochs
+
+# System parameters
+num_workers: 4          # Number of workers for data loading
+seed: 42                # Random seed for reproducibility
